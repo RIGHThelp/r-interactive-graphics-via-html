@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
+  <link rel="stylesheet" type="text/css" href="../../JavaScript/right.css"/>
+
+  <title>RIGHT: R Interactive Graphics via HTml</title>
+
+  <script src="../../JavaScript/kinetic-v5.0.1.js" type="text/javascript"></script>
+  <script src="../../JavaScript/common.js" type="text/javascript"></script>
+  <script src="../../JavaScript/structure.js" type="text/javascript"></script>
+  <script src="../../JavaScript/axis.js" type="text/javascript"></script>
+  <script src="../../JavaScript/color.js" type="text/javascript"></script>
+  <script src="../../JavaScript/callback.js" type="text/javascript"></script>
+  <script src="../../JavaScript/node_event.js" type="text/javascript"></script>
+  <script src="../../JavaScript/menu.js" type="text/javascript"></script>
+  <script src="../../JavaScript/array.js" type="text/javascript"></script>
+  <script src="../../JavaScript/dot.js" type="text/javascript"></script>
+  <script src="../../JavaScript/data.js" type="text/javascript"></script>
+
+</head>
+<body>
+
+  <script>
+  var subDiamonds = createMainStructureE(subDiamonds);
+  </script>
+  <div id="content">
+<div id="content1" class="right-output">
+<div id="container1" oncontextmenu="return false;"></div></div>
+<div id="content2" class="right-output">
+<div id="container2" oncontextmenu="return false;"></div></div>
+
+  </div>
+
+  <script>
+    
+    var axis1 = new Axis(1, subDiamonds, 'carat', 'price', {legend: 'color'});
+    var point1 = new Dot(axis1, subDiamonds, 'carat', 'price', {});
+    var axis2 = new Axis(2, subDiamonds, 'table', 'price', {legend: 'carat'});
+    var point2 = new Dot(axis2, subDiamonds, 'table', 'price', {});
+    
+    subDiamonds.draw();
+    var AllAxisObjArr = [axis1, axis2]; eventTrigger(AllAxisObjArr);
+  </script>
+
+<script>
+</script>
+
+  <div id="footer">
+  <p id="copyright">&copy; 2013 - <a href="#">The RIGHT team</a></p>
+  <p id="dont-delete-this">E-mail : <a href="mailto:right-user@googlegroups.com">right-user@googlegroups.com</a></p>
+  </div>
+
+</body>
+</html>
