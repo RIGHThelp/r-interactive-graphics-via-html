@@ -24,4 +24,4 @@ install.packages("right")
 ## Tutorial
 
 You can access tutorial site [http://righthelp.github.io/tutorial/overview](http://righthelp.github.io/tutorial/overview), and
-[https://code.google.com/p/r-interactive-graphics-via-html/](https://code.google.com/p/r-interactive-graphics-via-html/)
+[https://code.google.com/p/r-interactive-graphics-via-html/wiki/TutorialIntro](https://code.google.com/p/r-interactive-graphics-via-html/wiki/TutorialIntro)
