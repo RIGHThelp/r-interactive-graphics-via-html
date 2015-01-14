@@ -5,6 +5,8 @@
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 
   <link rel="stylesheet" type="text/css" href="../../JavaScript/right.css"/>
+  <link rel="stylesheet" type="text/css" href="../../JavaScript/shared/bootstrap/css/bootstrap.min.css"/>
+  <link rel="stylesheet" type="text/css" href="../../JavaScript/theme.css"/>
 
   <title>RIGHT: R Interactive Graphics via HTml</title>
 
@@ -28,16 +30,25 @@
   var subDiamonds = createMainStructureE(subDiamonds);
   var Theoph = createMainStructureE(Theoph);
   </script>
+  <div class="navbar navbar-fixed-top" role="navigation">
+<div class="navbar-header">
+<div id="content">
+<script>
+makeSearchButton("searchBox1", subDiamonds);
+makeSearchButton("searchBox2", Theoph);
+
+</script>
+</div>
+</div>
+</div>
+
   <div id="content">
-<div id="content1" class="right-output">
+  <div id="content1" class="right-output">
 <div id="container1" oncontextmenu="return false;"></div></div>
-<div id="content2" class="right-output">
+
+  <div id="content2" class="right-output">
 <div id="container2" oncontextmenu="return false;"></div></div>
 
-  <script>
-  makeSearchButton("searchBox1", subDiamonds);
-  makeSearchButton("searchBox2", Theoph);
-  </script>
   </div>
 
   <script>
@@ -56,7 +67,7 @@
 </script>
 
   <div id="footer">
-  <p id="copyright">&copy; 2013 - <a href="#">The RIGHT team</a></p>
+  <p id="copyright">&copy; 2014 - <a href="#">The RIGHT team</a></p>
   <p id="dont-delete-this">E-mail : <a href="mailto:right-user@googlegroups.com">right-user@googlegroups.com</a></p>
   </div>
 
