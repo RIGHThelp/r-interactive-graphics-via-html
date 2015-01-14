@@ -12,25 +12,30 @@
 #' 
 #' @seealso \code{\link{qplot}}
 #' 
+#' @importFrom ggplot2 geom_point
+#' @importFrom ggplot2 geom_line
+#' @importFrom ggplot2 geom_bar
+#' @importFrom ggplot2 geom_boxplot
 #' @export
 #' 
 #' @examples
 #' \donttest{
-#' RIGHT({qplot(x=Time, y=conc, data=Theoph, geom="point", colour=Subject)
-#'        qplot(x=Time, fill=Subject, data=Theoph, geom="bar")})
+#' obj <- RIGHT({qplot(x=Time, y=conc, data=Theoph, geom="point", colour=Subject)
+#'               qplot(x=Time, fill=Subject, data=Theoph, geom="bar")})
+#' print(obj)
 #' }
-createQlot <- function(x, y = NULL, ..., data, geom = "point") {
+createQplot <- function(x, y = NULL, ..., data, geom = "point") {
   
   .all_aesthetics <- c("adj", "alpha", "angle", "bg", "cex", "col", "color", "colour", "fg", "fill", "group", "hjust", "label", "linetype", "lower", "lty", "lwd", "max", "middle", "min", "order", "pch", "radius", "sample", "shape", "size", "srt", "upper", "vjust", "weight", "width", "x", "xend", "xmax", "xmin", "xintercept", "y", "yend", "ymax", "ymin", "yintercept", "z")
   argArray <- as.list(match.call())
   aesthetics <- plyr::compact(argArray[.all_aesthetics])  
   class(aesthetics) <- "uneval"
-
+  
   obj <- ggplot(data, aesthetics)
   
   data <- if (is.null(argArray$data)) NULL else as.character(argArray$data)
   attr(obj, "NAME") <- data
-
+  
   if(geom == "point") {
     obj <- obj + geom_point()
   } else if(geom == "line") {
@@ -40,7 +45,7 @@ createQlot <- function(x, y = NULL, ..., data, geom = "point") {
   } else if(geom == "boxplot") {
     obj <- obj + geom_boxplot()
   }
-    
+  
   ggplot_RIGHT(obj)
   
-} # function CreateAttr_qplot
+} # function createQplot
