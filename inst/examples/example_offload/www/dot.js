@@ -209,9 +209,9 @@ function dotUpdate () {
  * 
  */
 function dotHover () {
-	/*
+
 	return function (node, overOff) {// over: 1 , off: 0
-		if (overOff == 1) {
+	/*	if (overOff == 1) {
 			node.setScaleX(1.5);
 			node.setScaleY(1.5);
 			node.draw();
@@ -223,6 +223,7 @@ function dotHover () {
 				scaleY: 1
 			}).play(); 
 		}
-	};
 	*/
+	};
+	
 }
