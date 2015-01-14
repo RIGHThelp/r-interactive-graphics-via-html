@@ -1,11 +1,11 @@
 Package: RIGHT
 Type: Package
-Title: R Interactive Graphics via HTml
-Version: 0.1.3
-Date: 2014-02-08
+Title: R Interactive Graphics via HTML
+Version: 0.2.0
+Date: 2014-12-24
 Author: ChungHa Sung, TaeJoon Song, JongHyun Bae, SangGi Hong, Jae W. Lee, and
     Junghoon Lee
-Maintainer: Junghoon Lee <flammy@gmail.com>
+Maintainer: JongHyun Bae <bnbbkr@gmail.com>
 Description: RIGHT enables interactive data visualization and analysis using
     HTML5 canvas and JavaScript technology to help users easily explore data
     and gain valuable insight. Its R API is designed to create a seamless
@@ -17,11 +17,12 @@ License: GPL-3
 Depends:
     ggplot2
 Imports:
-    shiny,
+    plyr,
     rjson,
-    plyr
+    shiny
 Suggests:
     testthat
-URL: https://code.google.com/p/r-interactive-graphics-via-html/
+URL: https://code.google.com/p/r-interactive-graphics-via-html,
+    https://righthelp.github.io/tutorial/overview
 BugReports:
     https://code.google.com/p/r-interactive-graphics-via-html/issues/list
