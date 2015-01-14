@@ -6,9 +6,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
   <link rel="stylesheet" type="text/css" href="right.css"/>
+  <link rel="stylesheet" type="text/css" href="bootstrap.min.css"/>
   <link rel="stylesheet" type="text/css" href="shiny.css"/>
   <link rel="stylesheet" type="text/css" href="bootstrap-responsive.min.css"/>
-  <link rel="stylesheet" type="text/css" href="bootstrap.min.css"/>
   <link rel="stylesheet" type="text/css" href="jquery.slider.min.css"/>
 
   <title>RIGHT: R Interactive Graphics via HTml</title>
@@ -35,50 +35,34 @@
 </head>
 <body>
 
+  <script>
+  var Theoph = createMainStructureE(Theoph);
+  </script>
   <div id="content">
-<div id = "loessArray1" class = "right-output">
-<div id = "lmArray1" class = "right-output">
-<div id="container1" oncontextmenu="return false;"></div></div></div>
-<div id = "content2" class = "right-output">
-<div id="container2" oncontextmenu="return false;"></div></div>
-<div id = "loessArray2" class = "right-output">
-<div id = "lmArray2" class = "right-output">
-<div id="container3" oncontextmenu="return false;"></div></div></div>
-
+  <div id="loessArray" class="right-output">
+  <div id="container1" oncontextmenu="return false;"></div></div>
+  <div id="content2" class="right-output">
+  <div id="container2" oncontextmenu="return false;"></div></div>
   </div>
 
   <script>
-    var Theoph = createMainStructureE(Theoph);
-    var subDiamonds = createMainStructureE(subDiamonds);
     
-    var axis1 = new Axis(1, subDiamonds, 'price', 'carat', {});
-    var point1 = new Dot(axis1, subDiamonds, 'price', 'carat', {});
+    var axis1 = new Axis(1, Theoph, 'Time', 'conc', {legend: 'Subject'});
+    var point1 = new Dot(axis1, Theoph, 'Time', 'conc', {});
     var histObj1 = new ddply(Theoph, ['Time'], {});
     var axis2 = new Axis(2, histObj1, 'Time', 'frequency', {});
     var hist1 = new Bar(axis2, histObj1, 'Time', 'frequency', {});
-    var axis3 = new Axis(3, Theoph, 'Time', 'conc', {});
     
-    subDiamonds.draw();
     Theoph.draw();
-    var AllAxisObjArr = [axis1, axis2, axis3]; eventTrigger(AllAxisObjArr);
+    var AllAxisObjArr = [axis1, axis2]; eventTrigger(AllAxisObjArr);
   </script>
 
 <script>
-var loessArray1 = createMainStructureE('subDiamonds');
-var loffObj1 = new MakeLineObj(loessArray1, 'price', 'carat', {});
+var loessArray = createMainStructureE('Theoph');
+var loffObj1 = new MakeLineObj(loessArray, 'Time', 'conc', {});
 var loff1 = new Line(axis1, loffObj1, 'x1', 'x2', 'y1', 'y2', {});
-var lmArray1 = createMainStructureE('subDiamonds');
-var loffObj2 = new MakeLineObj(lmArray1, 'price', 'carat', {});
-var loff2 = new Line(axis1, loffObj2, 'x1', 'x2', 'y1', 'y2', {});
-var loessArray2 = createMainStructureE('Theoph');
-var loffObj4 = new MakeLineObj(loessArray2, 'Time', 'conc', { });
-var loff4 = new Line(axis3, loffObj4, 'x1', 'x2', 'y1', 'y2', { });
-var lmArray2 = createMainStructureE('Theoph');
-var loffObj3 = new MakeLineObj(lmArray2, 'Time', 'conc', {});
-var loff3 = new Line(axis3, loffObj3, 'x1', 'x2', 'y1', 'y2', {});
 $(function() {
 setTimeout(function() {
-window.Shiny.onInputChange('subDiamonds', subDiamonds.$isHidden);
 window.Shiny.onInputChange('Theoph', Theoph.$isHidden);
 }, 1)
 });
