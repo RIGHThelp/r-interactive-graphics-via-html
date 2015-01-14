@@ -48,8 +48,6 @@ createSource <- function(sourceArray = NULL) {
 
 ## ---
 ## Functions to keep track of links:
-##
-## See sourcing functions for comments.
 ## ---
 
 addLink <- function(newLink = NULL) {
@@ -90,7 +88,7 @@ createLink <- function(linkArray = NULL) {
     
   return(paste0('<link rel="stylesheet" type="text/css" href="', linkArray, '"/>'))
   
-} # createSource
+} # createLink
 
 ## ---
 ## Create the head section with a title:
