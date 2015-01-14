@@ -14,9 +14,8 @@
 #' 
 #' @examples
 #' \donttest{
-#' RIGHT({obj <- ggplot(Theoph, aes(Time, conc, colour=Subject)) + geom_point()
+#' obj <- RIGHT(print(ggplot(Theoph, aes(Time, conc, colour=Subject)) + geom_point()))
 #'        print(obj)
-#'        print(obj + geom_bar())})
 #' }
 createGgplot <- function(data, ...) {
   
@@ -31,21 +30,9 @@ createGgplot <- function(data, ...) {
   
 } # function CreateAttr_ggplot
 
-#' @title Make RIGHT html code using ggplot object
-#' 
-#' @description Function to create data object name in ggplot function.
-#' 
-#' @param obj a data.frame object.
-#' 
-#' @seealso \code{\link{ggplot2}}
-#' 
-#' @export
-#' 
-#' @examples
-#' \donttest{
-#' obj <- ggplot(Theoph, aes(Time, conc)) + geom_point()
-#' ggplot2RIGHT(obj)
-#' }
+## ---
+## Functions to Make RIGHT html code using ggplot object
+## ---
 ggplot_RIGHT <- function(obj) {
   
   type <- c()
@@ -219,4 +206,4 @@ ggplot_RIGHT <- function(obj) {
   
   invisible()
   
-} # function ggplot2RIGHT
+} # function ggplot_RIGHT
