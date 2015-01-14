@@ -1,3 +1,12 @@
+RIGHT 0.2.0
+===========
+ 
+ * Event handler part in Javascript is remaked.
+ * It is no longer necessary to change browser security option (e.g. --allow-file-access-from-files in Chrome, security.fileuri.strict_origin_policy in Firefox)
+ * Server offloading to couple interactive visualization and analysis using Shiny package and runServer() in RIGHT
+ * "ncol" option is added in RIGHT() to support an improved layout using bootstrap package
+ * A ggplot2-like API is supported by RIGHT, RIGHT(print(ggplot(Theoph, aes(x=Time, y=conc, color=Subject) + geom_point()))) and it can support plot, line, bar, boxplot.
+
 RIGHT 0.1.3
 ===========
 
