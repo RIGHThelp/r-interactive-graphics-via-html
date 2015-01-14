@@ -12,13 +12,12 @@
 #' 
 #' @examples
 #' \donttest{
-#' obj <-  RIGHT({plot(conc ~ Time, Theoph, type = "p", color = Subject)
-#'                loessArray <- runServer({
-#'                  obj <- loess(conc ~ Time, Theoph)
-#'                  simArray <- data.frame(Time = seq(min(Theoph$Time), max(Theoph$Time), length.out = 100))
-#'                  simArray$conc <- predict(obj, simArray)
-#'                  return(simArray)
-#'                })
+#' obj <-  RIGHT({plot(conc ~ Time, Theoph, type="p", color = Subject)
+#'                loessArray <- runServer({obj <- loess(conc ~ Time, data = Theoph)
+#'                    xRange <- range(Theoph$Time)
+#'                    simArray <- data.frame(Time = seq(xRange[1], xRange[2], length.out = 132))
+#'                    simArray$conc <- predict(obj, newdata = simArray)
+#'                    return(simArray)})
 #'                lines(conc ~ Time, loessArray)})
 #' print(obj)
 #' }
