@@ -13,6 +13,7 @@ prependBlankLine <- function(numLine = 1) {
 } # function prependBlankLine
 
 # Save data.frame objects:
+
 prepareData <- function(dataList, dir = ".") {
   
   # Array to save all data (data array, discrete data level)
@@ -46,7 +47,7 @@ prepareData <- function(dataList, dir = ".") {
   
 } # function prepareDataE
 
-# Add JavsScript expressions to load data. This function has side effects:
+# Add JavaScript expressions to load data. This function has side effects:
 loadData <- function(nameArray = NULL) {
   
   numData <- length(nameArray)
