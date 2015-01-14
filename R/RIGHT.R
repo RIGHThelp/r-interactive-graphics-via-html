@@ -150,30 +150,23 @@ repeat {
 #' @param title title of the visualization. The default value is "RIGHT: R Interactive Graphics via HTml."
 #' @param dir directory name to store files used for the visualization. Temporary directory is created under the current working directory by default.
 #' @param overwrite rewrite exiting files if the directory name matches. FALSE by default.
+#' @param ncol support improved layout to group related plots together
 #' @param browser a character string giving the name of the browser. It should be in the PATH, or a full path specified. getOption("browser") by default.
 #' @param supportRIGHT allow inserting Google AdSense to support further development of RIGHT. Use \code{\link{options}} and \code{\link{getOption}} to set and retrieve global option supportRIGHT.
 #' 
 #' @export
 #' 
 #' @examples
+#' \donttest{
 #' library(ggplot2)
 #' 
-#' set.seed(123456)
-#' 
-#' subArray <- diamonds[sample(1:nrow(diamonds), 1000, TRUE), ]
-#' fitObj <- loess(price ~ carat, subArray)
-#' xRange <- range(subArray$carat)
-#' fitArray <- data.frame(carat = seq(xRange[1], xRange[2], length.out = 100))
-#' fitArray$price <- predict(fitObj, newdata = fitArray)
-#' 
-#' \donttest{
-#' obj <- RIGHT({plot(price ~ carat, subArray, type = "p", color = "color")
-#'               lines(price ~ carat, fitArray)
-#'               hist(color, subArray, color = "cut")
-#'               boxplot(price ~ color, subArray)
-#'               pie(cut, subArray)
-#'               search(subArray)
-#'               table(subArray)})
+#' obj <- RIGHT({plot(conc ~ Time, Theoph, type = "p", color = "Subject")
+#'               lines(conc ~ Time, Theoph, by="Subject")
+#'               hist(Wt, Theoph)
+#'               boxplot(conc ~ Time, Theoph)
+#'               pie(Subject, Theoph)
+#'               search(Theoph)
+#'               table(Theoph)})
 #' print(obj)
 #' }
 RIGHT <- function(expr = {},
@@ -211,7 +204,7 @@ RIGHT <- function(expr = {},
                                       pie = pie_RIGHT,
                                       search = search_RIGHT,
                                       table = table_RIGHT,
-                                      qplot = createQlot, 
+                                      qplot = createQplot, 
                                       ggplot = createGgplot,
                                       print.ggplot = ggplot_RIGHT))
   
@@ -366,8 +359,10 @@ RIGHT <- function(expr = {},
 #' @export
 #' 
 #' @examples
-#' \donttest{obj <- RIGHT(plot(conc ~ Time, Theoph), Theoph)}
-#' \donttest{print(obj)}
+#' \donttest{
+#' obj <- RIGHT(plot(conc ~ Time, Theoph), Theoph)
+#' print(obj)
+#' }
 print.RIGHT <- function(x, ...) {
   
   fileName_index <- file.path(x$dir, "www", "index.html")
