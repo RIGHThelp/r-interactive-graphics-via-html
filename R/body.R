@@ -219,7 +219,7 @@ createScript <- function(scriptArray = NULL) {
 createFooter <- function() {
   
   return(c('<div id="footer">',
-           '<p id="copyright">&copy; 2014 - <a href="#">The RIGHT team</a></p>',
+           '<p id="copyright">&copy; 2015 - <a href="#">The RIGHT team</a></p>',
            '<p id="dont-delete-this">E-mail : <a href="mailto:right-user@googlegroups.com">right-user@googlegroups.com</a></p>',
            "</div>"))
   
