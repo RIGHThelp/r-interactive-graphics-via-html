@@ -38,7 +38,7 @@ createSource <- function(sourceArray = NULL) {
   if(!.RIGHT$flagServer) 
     sourceArray <- paste(.RIGHT$libDir_RIGHT, sourceArray, sep="/")
   else
-    sourceArray <- paste("Javascript/", sourceArray, sep="")
+    sourceArray <- paste("JavaScript/", sourceArray, sep="")
   
   sourceArray <- append(sourceArray, "data.js")
   
@@ -84,7 +84,7 @@ createLink <- function(linkArray = NULL) {
     }
   }
   else
-    linkArray <- paste("Javascript/", linkArray, sep="")
+    linkArray <- paste("JavaScript/", linkArray, sep="")
     
   return(paste0('<link rel="stylesheet" type="text/css" href="', linkArray, '"/>'))
   
